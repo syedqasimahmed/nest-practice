@@ -1,20 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
-import { SettingsDto } from '~constants/settings.dto';
+import { DatabaseModule } from '~database/database.module';
 
 
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
-    validationSchema: SettingsDto,
-    validationOptions: {
-      allowUnknown: false,
-      abortEarly: true,
-    },
-  })],
+    load: [() => ({ ...process.env })]
+  }), DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })
