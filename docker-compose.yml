@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  nest_practice_pg: # Service Name
+    container_name: nest_practice_pg # Container Name 
+    image: "postgres:12"
+    ports:
+      - "6801:5432" # Docker Container Port 5432 -> Map to local PC port and accessible on 6801
+    environment:
+      - POSTGRES_USER=nest_api
+      - POSTGRES_PASSWORD=nest_api
+      - POSTGRES_DB=nest_api
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+volumes:
+  pg-data: {}
+ 
