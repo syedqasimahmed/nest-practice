@@ -7,7 +7,7 @@ Covers what is nest js and how to migrate from express js to nest js
 
 ## Stack
 
-Capfolio API is built with using the following technologies:
+This API is built with using the following technologies:
 
 - Nest
 - Postgres
@@ -35,7 +35,7 @@ Recommended Software:
 
 ### Database Migrations
 
-Capfolio API uses TypeORM framework (0.3.17) for database migrations. For an introduction to
+This API uses TypeORM framework (0.3.17) for database migrations. For an introduction to
 TypeORM Migrations, see [Migrations | TypeORM](https://typeorm.io/migrations).
 
 Useful commands:
